@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--Estilos CSS-->
+    <link rel="stylesheet" href="bootstrap-4.5.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/editor.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style3.css">
+    <!--script para el editor de texto-->
+    <script src="js/jquery-1.12.0.js"></script>
+    <script src="js/editor.js"></script>
+    <!--script para convertir reportes PDF-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <title>SCESV</title>
+    <!-- script para mostrar el editor de texto-->
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#txt-content').Editor();
+  
+        $('#txt-content').Editor('setText', ['']);
+  			
+      });	
+    </script>
+</head>
+<body id="body" onload="mostrarHora();">
+    <nav id="navbar">
+        <img src="image/logo-minci.jpg" class="navbar-left img-responsive mppci">
+        <p id="hora" class="horaocl"></p>
+        <div class="navbar-header">
+        <a  class="home" onclick="retro();">
+            <img src="image/logo-vive-evoluciona.png" alt="Vive Tv" class="logo-menu">
+        </a>
+        <div class="enlaces">
+            <a id="abrir" class="menu" ><i class="fas fa-bars"></i></a>
+        </div>
+    </nav>
+    <div class="contenedor">
+        <div class="bienvenida" id="welcome">
+            <img class="imagen-bienvenida" src="image/logo-vive-evoluciona.png" alt="hola">
+            <div class="texto-bienvenida">
+              <h1>Bienvenido Fulanito</h1>
+              <h3><span id="hora1"></span></h3>
+            </div>
+        </div>
+        <div class="dashboard" id="dashboard">
+            <div class="statistics" id="statistics">
+                <fieldset class="fieldset">
+                    <legend class="legend">&Aacute;reas con mas ingresos</legend>
+                    <div class="by-areas1">
+                        Total de personas que ingresaron = 5
+                    </div>
+                    <div class="by-areas2">
+                        Total de personas que ingresaron = 5
+                    </div>
+                    <div class="by-areas3">
+                        Total de personas que ingresaron = 5
+                    </div>
+                    <div class="by-areas1">
+                        Total de personas que ingresaron = 5
+                    </div>
+                    <div class="by-areas2">
+                        Total de personas que ingresaron = 5
+                    </div>
+                    <div class="by-areas3">
+                        Total de personas que ingresaron = 5
+                    </div>
+                </fieldset>
+            </div>
+            <div class="graphics">
+                <fieldset class="fieldsetG" id="fieldsetG">
+                    <legend class="graphic">Informaci&oacute;n variada</legend>
+                    <div class="by-area" id="by-area">
+                        <h3>Acceso por &aacute;rea</h3>
+                        <img class="image1" src="image/grafico.png" alt="">
+                    </div>
+                    <div class="entrada-salida" id="es">
+                        <div class="entrada">
+                          <h3>Entrada</h3>
+                          <div class="ENTRA">
+                            <div class="foto"><img class="fotus" src="image/pruebas2.jpeg" alt=""></div>
+                              <table class="EN-SA">
+                                <thead class="EN-SA_thead">
+                                  <th class="EN-SA_th">Nro carnet</th>
+                                  <th class="EN-SA_th">Entrada</th>
+                                  <th class="EN-SA_th">Restante</th>
+                                </thead>
+                                <tbody class="EN-SA_td">
+                                  <td class="EN-SA_td">21</td>
+                                  <td class="EN-SA_td">09:05</td>
+                                  <td class="EN-SA_td"> 50min</td>
+                                </tbody>
+                              </table>
+                          </div>
+                          <div class="ENTRA">
+                            <div class="foto"><img class="fotus" src="image/pruebas2.jpeg" alt=""></div>
+                              <table class="EN-SA">
+                                <thead class="EN-SA_thead">
+                                  <th class="EN-SA_th">Nro carnet</th>
+                                  <th class="EN-SA_th">Entrada</th>
+                                  <th class="EN-SA_th">Restante</th>
+                                </thead>
+                                <tbody class="EN-SA_td">
+                                  <td class="EN-SA_td">21</td>
+                                  <td class="EN-SA_td">09:05</td>
+                                  <td class="EN-SA_td"> 50min</td>
+                                </tbody>
+                              </table>
+                          </div>
+                          <div class="ENTRA">
+                            <div class="foto"><img class="fotus" src="image/pruebas2.jpeg" alt=""></div>
+                              <table class="EN-SA">
+                                <thead class="EN-SA_thead">
+                                  <th class="EN-SA_th">Nro carnet</th>
+                                  <th class="EN-SA_th">Entrada</th>
+                                  <th class="EN-SA_th">Restante</th>
+                                </thead>
+                                <tbody class="EN-SA_td">
+                                  <td class="EN-SA_td">21</td>
+                                  <td class="EN-SA_td">09:05</td>
+                                  <td class="EN-SA_td">50min</td>
+                                </tbody>
+                              </table>
+                          </div>
+                        </div>
+                      <div class="salir">
+                        <h3>Salida</h3>
+                        <div class="SALI">
+                            <div class="foto"><img class="fotus" src="image/prueba3.jpg" alt=""></div>
+                            <table class="EN-SA">
+                              <thead class="EN-SA_thead">
+                                <th class="EN-SA_th">Nro carnet</th>
+                                <th class="EN-SA_th">Entrada</th>
+                                <th class="EN-SA_th">Salida</th>
+                              </thead>
+                              <tbody class="EN-SA_td">
+                                <td class="EN-SA_td">15</td>
+                                <td class="EN-SA_td">09:05</td>
+                                <td class="EN-SA_td"> 10:20</td>
+                              </tbody>
+                            </table>
+                        </div>
+                        <div class="SALI">
+                            <div class="foto"><img class="fotus" src="image/prueba3.jpg" alt=""></div>
+                            <table class="EN-SA">
+                              <thead class="EN-SA_thead">
+                                <th class="EN-SA_th">Nro carnet</th>
+                                <th class="EN-SA_th">Entrada</th>
+                                <th class="EN-SA_th">Salida</th>
+                              </thead>
+                              <tbody class="EN-SA_td">
+                                <td class="EN-SA_td">15</td>
+                                <td class="EN-SA_td">09:05</td>
+                                <td class="EN-SA_td"> 10:20</td>
+                              </tbody>
+                            </table>
+                        </div>
+                        <div class="SALI">
+                          <div class="foto"><img class="fotus" src="image/pruebas2.jpeg" alt=""></div>
+                          <table class="EN-SA">
+                            <thead class="EN-SA_thead">
+                              <th class="EN-SA_th">Nro carnet</th>
+                              <th class="EN-SA_th">Entrada</th>
+                              <th class="EN-SA_th">Salida</th>
+                            </thead>
+                            <tbody class="EN-SA_td">
+                              <td class="EN-SA_td">14</td>
+                              <td class="EN-SA_td">09:05</td>
+                              <td class="EN-SA_td"> 10:20</td>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="user" id="user">
+            <div class="head" id="head">
+                <!--img src="visitantes.jpg" alt="Visitantes"-->
+                <h2>Sistema de control de entrada y salida de visitantes</h2>
+            </div>
+            <div class="photo-profile">
+                <img src="image/prueba3.jpg" alt="Foto de perfil">
+            </div>
+            <div class="name-lastname">
+                <h4 class="nombre">Fulanito Fulano</h4>
+                <p class="nickname">@fulanito1</p>
+            </div>
+            <div class="info-user"id="info-user">
+                <button class="panel-info pi1" id="pi1">Informaci&oacute; Personal</button > 
+                <button class="panel-info" id="pi2">Acciones que realiza</button >
+                <button class="panel-info" id="pi3">Cambio de contra&ntilde;a</button >
+            </div>
+            <hr>
+            <div class="information" id="information">
+                <h4>Nombre : Fulano</h4>
+                <h4>Apellido : Fulano</h4>
+                <h4>C&eacute;dula : 15647120 </h4>
+                <h4>Correo : funalito@vive.got.ve</h4>
+                <h4>User name : fulanito1</h4>
+                <h4>Cargo : Vigilante</h4>
+                <button type="reset" class="btn btn-secondary modificar">Modificar</button>
+            </div>
+            <div class="acciones" id="acciones">
+                <form >
+                    <h4>Este usuario puede realizar las siguientes acciones:</h4>
+                    <label >
+                        Agregar visitantes
+                        <input type="checkbox" checked disabled>
+                    </label>
+                    <label >
+                        Modificar visitantes
+                        <input type="checkbox" checked disabled>
+                    </label>
+                    <label >
+                        Consultar visitantes
+                        <input type="checkbox" checked disabled>
+                    </label>
+                </form>
+            </div>
+            <div class="cambio-contraseña" id="cambiocontra">
+                <form>
+                    <div class="inputs">
+                        <div class="input-group mb-3 ilogin">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">C&eacute;dula <i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" name="User_name" id="name"    display: none; class="form-control" required>
+                        </div>
+                        <div class="input-group mb-3 ilogin">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"> New Password <i class="fas fa-unlock-alt"></i> </span> 
+                            </div>
+                            <input type="password" name="contra" id="name" class="form-control" required>
+                        </div>
+                        <div class="input-group mb-3 ilogin">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"> Verificar Password <i class="fas fa-unlock-alt"></i> </span> 
+                            </div>
+                            <input type="password" name="contra" id="name" class="form-control" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn ingresar">Acceptar<i class="fas fa-save"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="container-login1" id="FormR">
+            <form action="" class="form-registroV">
+                <h3>Registro de vigilantes</h3>
+                <div class="inputs">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Nombres</span>
+                        </div>
+                        <input type="text" name="nombres" id="name" class="form-control" required>
+                    </div>
+                    <div class="input-group mb-3 ">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Apellidos</span> 
+                        </div>
+                        <input type="text" name="apellidos" id="name" class="form-control" required>
+                    </div>
+                    <div class="input-group mb-3 ilogin">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">C&eacute;dula</span> 
+                        </div>
+                        <input type="text" name="cedula" id="name" class="form-control" required>
+                    </div>
+                    <div class="input-group mb-3 ilogin">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">User Name</span> 
+                        </div>
+                        <input type="text" name="user" id="name" class="form-control" required>
+                    </div>
+                    <div class="input-group mb-3 ilogin">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Password</span> 
+                      </div>
+                      <input type="password" name="user" id="name" class="form-control" required>
+                  </div>
+                </div>
+                <button type="submit" class="btn ingresar">Registrar<i class="fas fa-save"></i></button>
+            </form>
+            <div class="lateral">
+                <div class="texto">
+                    <img src="image/logo-vive-evoluciona.png" alt="Vive Tv" class="logo-menu">
+                    <h5>Sistema de control de entrada y salida de visitantes</h5>
+                </div>
+                <div class="imagen-fondo">
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+        </div> 
+        <div class="list-vigilante" id="list-vigilante">
+            <h3>Listado de Vigilante</h3>
+            <table>
+                <div class="buscador">
+                  <form>
+                     <div class="input-group buscador">
+                       <input type="search"  class="busca" name="buscar" id="buscar" placeholder="Nro c&eacute;dula">
+                       <span class=" input-group-btn">
+                         <button class="buscar"><i class="fas fa-search"></i></button>
+                       </span>
+                     </div>
+                  </form>
+               </div>
+               <button class="btn regisV" id="btnRV" >Vigilante<i class="fas fa-plus"></i></button>
+              <thead>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>c&eacute;dula</th>
+                <th>Domicilio</th>
+                <th>User name</th>
+                <th>Fecha de Registro</th>
+                <th>Ultima Modificaci&oacute;n</th>
+                <th>acciones</th>
+              </thead>
+              <tbody>
+                <td>fulanito</td>
+                <td>fulano</td>
+                <td>1236985</td>
+                <td> catia </td>
+                <td>fulanito</td>
+                <td>20/10/2020</td>
+                <td>20/10/2020</td>
+                <td>ver mas
+                  <a href="#" id="btn-abrir-modal">
+                    <i class="far fa-eye"></i>
+                  </a>
+                </td>
+              </tbody>
+            </table>
+            <section class="paginacion">
+              <ul>
+                <li><a href="" class="active">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+              </ul>
+            </section>
+        </div> 
+        <div class="container-lista-vistante" id="listVistors">
+          <h3>Listado de Visitantes</h3>
+          <table class="lista">
+            <div class="buscador">
+               <form>
+                  <div class="input-group buscador">
+                    <input type="search"  class="busca" name="buscar" id="buscar" placeholder="Nro c&eacute;dula">
+                    <span class=" input-group-btn">
+                      <button class="buscar"><i class="fas fa-search"></i></button>
+                    </span>
+                  </div>
+               </form>
+            </div>
+            <a class="btn regisV" id="btnRV" >Visitante<i class="fas fa-plus"></i></a>
+            <thead>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>C&eacute;dula</th>
+              <th>Contacto</th>
+              <th>Domicilio</th>
+              <th>Nro carnet</th>
+              <th>&Aacute;rea de ingreso</th>
+              <th>Hora de ingreso</th>
+              <th>Hora de salida</th>
+              <th>Acciones</th>
+            </thead>
+            <tbody>
+              <td>Juanito</td>
+              <td>fulano</td>
+              <td>1236985</td>
+              <td>04160137777</td>
+              <td>agua salud av sucre</td>
+              <td>20</td>
+              <td>tecnolog&iacute;a</td>
+              <td>12:30pm</td>
+              <td>1:00pm</td>
+              <td>ver mas
+                <a href="#" id="btn-abrir-modal2">
+                  <i class="far fa-eye"></i>
+                </a>
+              </td>
+            </tbody>
+          </table>
+          <section class="paginacion">
+            <ul>
+              <li><a href="" class="active">1</a></li>
+              <li><a href="">2</a></li>
+              <li><a href="">3</a></li>
+            </ul>
+          </section>
+        </div>
+        <div class="container" id="registro-visitor">
+          <form class="registro">
+            <h3>REGISTROS DE VISITANTES</h3>
+            <div class="formulario" id="formulario">
+              <div class="inputs">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Nombre</span>
+                  </div>
+                  <input type="text" name="nombre" id="name" class="form-control" required>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text">Apellido</span>
+                    </div>
+                    <input type="text" name="apellido" id="A" class="form-control" required>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">C&eacute;dula</span>
+                    </div>
+                    <input type="text" name="cedula" id="C" class="form-control" required>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Contacto</span>
+                  </div>
+                    <input type="text" name="contacto" id="T" class="form-control" required>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Domicilio</span>
+                  </div>
+                  <textarea class="form-control domi" aria-label="With textarea" required></textarea>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Nro Carnet</span>
+                  </div>
+                    <input type="number" name="carnet" id="Nrocar" class="form-control" required>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                  <span class="input-group-text">Responsable</span>
+                  </div>
+                  <input type="text" name="responsable" id="res" class="form-control" required>
+              </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">&Aacute;rea a ingresar</span>
+                  </div>
+                  <select name="Ingresa" id="" class="form-control select custom-select" >
+                    <option value="">Seleccione &aacute;rea</option>
+                    <option value="tec">Tecnolog&iacute;a</option>
+                    <option value="rec">Recursos Humanos</option>
+                    <option value="123Tv">123 Tv</option>
+                  </select>
+                </div>
+                <fieldset class="oculto" id="oculto" aria-hidden="true">
+                  <legend>Registros de equipos</legend>
+                    <div class="input-group mb-3" >
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Tipo</span>
+                      </div>
+                        <input type="text" name="contacto" id="T" class="form-control">
+                    </div>
+                    <div class="input-group mb-3 " >
+                      <div class="input-group-prepend ">
+                        <span class="input-group-text">Descripci&oacute;n</span>
+                      </div>
+                      <textarea class="form-control domi" aria-label="With textarea" placeholder="Descripcion"></textarea>
+                    </div>
+                </fieldset>
+                <button type="reset" id="RE" class="btn RE">Registro de equipos<i class="fas fa-laptop"></i>  <i class="fas fa-tools"></i> </button>
+                <button type="reset" id="oculto2" class="btn CL">Ocultar<i class="far fa-eye-slash"></i></i> </button>
+              </div>
+              <div class="box-photo">
+                <div class="photo">
+                    <img src="image/prueba3.jpg" alt="">
+                </div>
+                <button type="reset" class="btn btn-secondary tfoto">Tomar Foto <i class="fas fa-camera"></i></button>
+            </div>
+            </div>    
+            <button type="submit" class="btn save">Guardar <i class="fas fa-save"></i></button>
+          </form> 
+        </div>
+        <div class="list-vigilante" id="auditar">
+          <h3>Auditor&iacute;a</h3>
+          <table>
+              <div class="buscador-audi">
+                <form>
+                   <div class="input-group buscador">
+                     <input type="search"  class="busca" name="buscar" id="buscar" placeholder="Nro c&eacute;dula">
+                     <span class=" input-group-btn">
+                       <button class="buscar"><i class="fas fa-search"></i></button>
+                     </span>
+                   </div>
+                </form>
+             </div>
+            <thead>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Acciones</th>
+              <th>Maquina</th>
+              <th>IP</th>
+              <th>Navegador</th>
+              <th>Hora</th>
+              <th>D&iacute;a</th>
+            </thead>
+            <tbody>
+              <td>fulanito</td>
+              <td>fulano</td>
+              <td>Ingresar</td>
+              <td>0007894</td>
+              <td>192.123.12.0</td>
+              <td>mozilla firefox</td>
+              <td>08:59</td>
+              <td>5-11-2020</td>
+            </tbody>
+          </table>
+          <section class="paginacion">
+            <ul>
+              <li><a href="" class="active">1</a></li>
+              <li><a href="">2</a></li>
+              <li><a href="">3</a></li>
+            </ul>
+          </section>
+        </div> 
+        <div class="texto-reporte" id="Text">
+          <h3 class="titulo-repor">Crear Reportes</h3>
+          <div class="conteiner" style="margin: auto; width: 850px;">
+            <div class="row">
+              <div class="col-sm-15">
+                <form action="" id="frm-test">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Asunto</span>
+                    </div>
+                    <input type="text" name="nombres" id="titulo" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <textarea id="txt-content" name="txt-content"></textarea>
+                  </div>
+                  <button type="submit" onclick="pruebaDivAPdf()" class="btn save">Guardar <i class="fas fa-save"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class='see-reports' id="reports">
+          <h3> Catalago de reportes</h3>
+          <div class="cards">
+            <div class="card" >
+              <div class="card-body">
+                <h5 class="card-title">Titulo</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Ver m&aacute;s</a>
+              </div>
+            </div>
+            <div class="card" >
+              <div class="card-body">
+                <h5 class="card-title">Titulo</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Ver m&aacute;s</a>
+              </div>
+            </div>
+            <div class="card" >
+              <div class="card-body">
+                <h5 class="card-title">Titulo</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Ver m&aacute;s</a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Titulo</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Ver m&aacute;s</a>
+              </div>
+            </div>
+            <div class="card" >
+              <div class="card-body">
+                <h5 class="card-title">Titulo</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Ver m&aacute;s</a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Titulo</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class=" btn btn-primary">Ver m&aacute;s</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="permisos" id="permits">
+          <h1 style="margin-top:20px">Agregar Permisos a usuarios</h1>
+          <form action="" class="search-user-role">
+              <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Ingrese cedula del usuario a buscar">
+                  <div class="input-group-append">
+                    <button class="btn buscar" type="button"><i class="fas fa-search"></i></button>
+                  </div>
+              </div>
+          </form>
+          <div class="permis-contec">
+              <div class="datos-user">
+                  <div class="photo-us">
+                      <img src="image/prueba3.jpg" alt="">
+                      <span class="name-user"><h3>Fulanito Fulano</h3></span>
+                  </div>
+                  <div class="input-group info-rol">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text" id="btnGroupAddon">C&eacute;dula</div>
+                      </div>
+                      <input type="text" class="form-control" value="27647120" disabled>
+                  </div>
+                  <div class="input-group info-rol">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text" id="btnGroupAddon">Cargo</div>
+                      </div>
+                      <input type="text" class="form-control" value="Vigilante" disabled>
+                  </div>
+                  <div class="input-group info-rol">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text" id="btnGroupAddon">Rol</div>
+                      </div>
+                      <select class="form-control custom-select select" disabled>
+                          <option value="admin">Administrador</option>
+                          <option value="empleado">Empleado</option>
+                          <option value="seguridad">Seguridad</option>
+                        </select>
+                  </div>
+              </div>
+              <div class="permisos-user">
+                  <h3>Permisos</h3>
+                  <form action="">
+                      <div class="form-check mb-3">
+                          <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked disabled>
+                          <label class="form-check-label" for="exampleRadios1">
+                            Insertar
+                          </label>
+                        </div>
+                        <div class="form-check mb-3">
+                          <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2" disabled>
+                          <label class="form-check-label" for="exampleRadios2">
+                            Modificar
+                          </label>
+                        </div>
+                        <div class="form-check mb-3">
+                          <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+                          <label class="form-check-label" for="exampleRadios3">
+                            Eliminar
+                          </label>
+                        </div>
+                        <div class="form-check mb-3">
+                          <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+                          <label class="form-check-label" for="exampleRadios3">
+                            Buscar
+                          </label>
+                        </div>
+                        <div class="form-check mb-3">
+                          <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+                          <label class="form-check-label" for="exampleRadios3">
+                            Imprimir
+                          </label>
+                        </div>
+                  </form>
+                  <button class= "RER btn">Modificar</button>
+              </div>
+          </div>
+      </div>
+      <div class="side-bar" id="br-lateral">
+        <div class="bar-profile">
+            <img src="image/prueba3.jpg" alt="Foto de perfil">
+        </div>
+        <div class="user-name">
+            <p>@fulanito1</p>
+        </div>
+        <div class="dashboard-view">
+            <a id="btn-dashboard">Dashboard <i class="fas fa-tachometer-alt"></i></a>
+        </div>
+        <div class="moduloe">
+            Estad&iacute;sticas
+            <i class="fas fa-chart-area"></i>
+            <ul>
+                <li><a href="#" class="opc">Por &aacute;reas <i class="fas fa-layer-group"></i></a></li>
+                <li><a href="#" class="opc">General<i class="fas fa-chart-pie"></i></a></li>
+            </ul>
+        </div>
+        <div class="modulor">
+            Reportes<i class="far fa-clipboard"></i>
+            <ul>
+              <li><a class="no-oculto" id="reporte">Crear Reportes<i class="far fa-plus-square"></i></a></li>
+              <li><a class="no-oculto" id="see-reports">Ver Reportes<i class="fas fa-file-alt"></i></a></li>
+            </ul>
+        </div>
+        <div class=" list">
+            Listados<i class="fas fa-list"></i>
+            <ul class="ul">
+                <li><a id="list-vigilant" class="opc">Vigilantes<i class="fas fa-user-shield"></i></a></li>
+                <li><a id="list-visitors" class="opc">Visitantes<i class="fas fa-walking"></i></a></li>
+            </ul>
+        </div>
+        <div class="log">
+          <a  class="no-oculto" id="visitante" onclick="regisvisitante();">Agregar Visitante<i class="fas fa-walking"></i></a>
+      </div>
+        <div class="moduloc">Configuraci&oacute;n<i class="fas fa-cog"></i>
+            <ul class="ul">
+                <li><a id="btnuser" class="opc">Usuario<i class="fas fa-user"></i></a></li>
+                <li><a id="roles" class="opc">Roles <i class="fas fa-users-cog"></i></a></li>
+                <li><a id="audi" class="opc">Auditor&iacute;a <i class="fas fa-user-tag"></i></a></li>
+                <li><a id="roles" class="opc" id="new-user" onclick="newUser();">Nuevo usuario <i class="fas fa-user-plus"></i></a></li>
+            </ul>
+        </div>
+        <div class=" log">
+            <a href="login.html" class="no-oculto">Logout<i class="fas fa-sign-out-alt"></i></a>
+        </div>
+        <button id="ocultar" onclick="ocultar();"><span class="material-icons">keyboard_tab</span></button> 
+      </div>
+    </div>
+    <!--Pop-up vigilantes-->
+    <div class="overlay" id="overlay">
+        <div class="popup" id="popup">
+          <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas
+              fa-times"></i></a>
+          <h3>fulanito fulano</h3>
+          <div class="acomodar">
+            <div class="info">
+              <form action="">
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">C&eacute;dula:</span>
+                  </div>
+                  <input type="text" name="contacto" class="form-control" id="cedula" value="1236985" disabled='disabled'>
+                </div>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Contacto:</span>
+                  </div>
+                  <input type="text" name="contacto" class="form-control"value="04160137777" id ="contac" disabled>
+                </div>
+    
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Domicilio:</span>
+                  </div>
+                  <input type="text" name="Domicilio" class="form-control" id="direc" value="Agua salud av sucre" disabled=''>
+                </div>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">User name:</span>
+                  </div>
+                  <input type="text" name="User-name" id="user-n" class="form-control" value="Fulanito" disabled='disabled'>
+                </div>  
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Fecha de Registro:</span>
+                  </div>
+                  <input type="text" name="fecha-regis" id="Fr" class="form-control" value="20/10/2020" disabled='disabled'>
+                </div>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Ultima Modificaci&oacute;n:</span>
+                  </div>
+                  <input type="text" name="fecha-regis" id="Fr" class="form-control" value="20/10/2020" disabled='disabled'>
+                </div>
+                  <button type="submit" class="btn regisE" id="btnRE" >Guardar<i class="fas fa-save"></i></button>
+              </form>
+            </div>
+            <div class="box-photo1">
+                <div><i class="fas fa-user-friends"></i></div>
+                <button type="reset" class="Editar" id="edit" onclick='activar(); alert("Los campos se han habilitados para su edici&oacute;n")'>Editar<i class="far fa-edit"></i></button>
+                <button type="reset" class="Eliminar">Eliminar<i class="fas fa-user-slash"></i></button>
+            </div>
+          </div>
+          <button class="btn regisNE" id="btnRNE" onclick="desactivar();" >No Editar<i class="fas fa-ban"></i></button>
+        </div>
+    </div>
+    <!--pop-up visitante-->
+    <div class="overlay" id="overlay2">
+      <div class="popup" id="popup2">
+        <a id="btn-cerrar-popup2" class="btn-cerrar-popup">
+          <i class="fas fa-times"></i></a>
+        <h3>fulanito fulano</h3>
+        <div class="acomodar">
+          <div class="info">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text">C&eacute;dula</span>
+              </div>
+              <input type="text" name="contacto" class="form-control"
+                value="1236985" disabled='disabled'>
+            </div>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Contacto</span>
+              </div>
+              <input type="text" name="contacto" class="form-control"
+                value="04160137777" disabled='disabled'>
+            </div>
+
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Domicilio</span>
+              </div>
+              <input type="text" name="contacto" class="form-control"
+                value="Agua salud av sucre" disabled='disabled'>
+            </div>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nro carnet</span>
+              </div>
+              <input type="number" name="contacto" class="form-control"
+                value="20" disabled='disabled'>
+            </div>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text">&Aacute;rea de Ingreso</span>
+              </div>
+              <input type="text" name="contacto" class="form-control"
+                value="tecnolog&iacute;a" disabled='disabled'>
+            </div>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Hora de ingreso</span>
+              </div>
+              <input type="text" name="contacto" class="form-control"
+                value="12:30pm" disabled='disabled'>
+            </div>
+            <button type="reset" class="salida">Marcar salida</button>
+          </div>
+          <div class="box-photo1">
+            <div class="photo1">
+              <img src="image/pruebas2.jpeg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/dashboard.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        //Script para mostrar la hora
+        function mostrarHora() {
+            var fecha = new Date()
+          var hora = fecha.getHours(); 
+          var minutos = fecha.getMinutes();
+          var segundos= fecha.getSeconds();
+          document.getElementById('hora').innerHTML = hora +":" + minutos +":"+ segundos;
+          document.getElementById('hora1').innerHTML = hora +":" + minutos +":"+ segundos;
+          setTimeout("mostrarHora()",1000) 
+        }
+        //Script para mostrar registro de de equipos
+        var btnRE = document.getElementById('RE'),
+        mostrar = document.getElementById('oculto'),
+        btnocultar = document.getElementById('oculto2');
+
+        btnRE.addEventListener('click', function(){
+  	      mostrar.classList.add('active');
+	        btnocultar.classList.add('active');
+	        btnRE.classList.add('active');
+        })
+
+        btnocultar.addEventListener('click', function(e){
+	        e.preventDefault();
+	        mostrar.classList.remove('active');
+	        btnocultar.classList.remove('active');
+	        btnRE.classList.remove('active');
+        });	
+    </script>
+    <!--Script para convertir el contenido del div a PDF-->
+    <script>
+	  function pruebaDivAPdf() {
+		  var titulo = document.getElementById('titulo').value;
+		  var pdf = new jsPDF('p', 'pt', 'letter');
+		  source = $('#print')[0];
+
+		  specialElementHandlers = {
+			  '#bypassme': function (element, renderer) {
+				    return true
+			  }
+		  };
+		  margins = {
+			  top: 80,
+			  bottom: 60,
+			  left: 40,
+			  width: 522
+		  };
+
+		  pdf.fromHTML(
+			  source, 
+			  margins.left, 
+			  margins.top, { 
+				'width': margins.width, 
+				'elementHandlers': specialElementHandlers
+			},
+			function (dispose) {
+				pdf.save(titulo);
+			}, margins
+		);
+	}
+</script>
+</body>
+</html>
